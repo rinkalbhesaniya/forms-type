@@ -1,0 +1,58 @@
+<p>home works!</p>
+<div [formGroup]="userForm" class="normal-form">
+  <mat-form-field appearance="standard">
+    <input
+      formControlName="name"
+      matInput
+      placeholder=" full name"
+    /> </mat-form-field
+  ><br />
+  <mat-form-field appearance="standard">
+    <input
+      formControlName="email"
+      matInput
+      placeholder=" email "
+    /> </mat-form-field
+  ><br />
+  <mat-form-field appearance="standard">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button> </mat-form-field
+  ><br />
+  <mat-form-field appearance="standard">
+    <input
+      formControlName="mobile"
+      matInput
+      placeholder=" mobile "
+    /> </mat-form-field
+  ><br />
+  <mat-radio-group aria-label="Select an option">
+    <mat-label>select gender:-- </mat-label>
+    <mat-radio-button value="1">Male</mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+    <mat-radio-button value="2">Other</mat-radio-button> </mat-radio-group
+  ><br />
+  <mat-form-field class="example-full-width" appearance="standard">
+    <mat-label>address</mat-label>
+    <textarea
+      matInput
+      placeholder="enter address here "
+    ></textarea></mat-form-field
+  ><br />
+
+  <mat-form-field appearance="standard">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
